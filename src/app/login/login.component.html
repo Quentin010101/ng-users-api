@@ -1,0 +1,9 @@
+<p>login works!</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <app-text [username]="'username'" [formGroup]="loginForm"></app-text>
+  <label for="password">Password: </label>
+  <input type="password" id="password" formControlName="password">
+  <button type="submit" [disabled]="!loginForm.valid">Valid</button>
+</form>
+
