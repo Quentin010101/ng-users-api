@@ -1,4 +1,4 @@
 <div [formGroup]="formGroup">
-  <label for="username">UserName: </label>
-  <input type="text" id="username" formControlName="username" required>
+  <label for="alias-{{ i }}">Alias: {{ i }}</label>
+  <input id="alias-{{ i }}" type="text" formControlName="i" required>
 </div>

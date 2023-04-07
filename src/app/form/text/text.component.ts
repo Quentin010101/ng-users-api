@@ -7,6 +7,6 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./text.component.scss']
 })
 export class TextComponent {
-@Input() username: String = ''
+@Input() i: String = ''
 @Input() formGroup: FormGroup = new FormGroup({})
 }
