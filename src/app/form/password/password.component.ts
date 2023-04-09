@@ -1,19 +1,19 @@
 import { Component, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'app-text',
-  templateUrl: './text.component.html',
-  styleUrls: ['./text.component.scss'],
+  selector: 'app-password',
+  templateUrl: './password.component.html',
+  styleUrls: ['./password.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TextComponent),
+      useExisting: forwardRef(() => PasswordComponent),
       multi: true
     }
   ]
 })
-export class TextComponent implements ControlValueAccessor{
+export class PasswordComponent implements ControlValueAccessor{
   value: string = ''
   isDisabled: boolean = false
   

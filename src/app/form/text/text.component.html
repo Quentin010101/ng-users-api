@@ -1,4 +1,2 @@
-<div [formGroup]="formGroup">
-  <label for="alias-{{ i }}">Alias: {{ i }}</label>
-  <input id="alias-{{ i }}" type="text" formControlName="i" required>
-</div>
+<label for="">Username</label>
+<input [disabled]="isDisabled" type="text" [value]="value" (input)="onInput($event)" (blur)="onTouched()">
