@@ -1,0 +1,24 @@
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/home" routerLinkActive="primary-1">Home</a>
+      </li>
+      <li>
+        <a routerLink="/docs" routerLinkActive="primary-1">Docs</a>
+      </li>
+      <li>
+        <a routerLink="/pricing" routerLinkActive="primary-1">Pricing</a>
+      </li>
+    </ul>
+  </nav>
+  <div *ngIf="_authservice.isLoggedIn$ | async; else notLogged">
+    <a class="button-header" routerLink="/dashboard">dashboard</a>
+  </div>
+  <ng-template #notLogged>
+    <div class="notLogged">
+      <a class="button-header" routerLink="/login">log in</a>
+      <a class="button-header full" routerLink="/signup">sign up</a>
+    </div>
+  </ng-template>
+</header>

@@ -1,0 +1,23 @@
+:host{
+  min-height: 100vh;
+}
+
+.title{
+  h1{
+    margin: 4rem 0 2rem 0;
+    text-align: center;
+    opacity: 0.7;
+  }
+  p{
+    text-align: center;
+  }
+}
+
+pre{
+  margin: 2rem auto;
+  width: fit-content;
+  font-size: 1.3rem;
+  background-color: rgb(210,210,210);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}

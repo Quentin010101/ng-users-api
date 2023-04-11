@@ -1,1 +1,21 @@
-<p>user-info works!</p>
+<div class="container">
+  <h3>
+    <mat-user></mat-user>
+    <span>Profile</span>
+  </h3>
+  <p>On this page you can find your personnal information.</p>
+  <div class="block">
+    <div>
+      <h4>Username:</h4>
+      <p>{{ user.username }}</p>
+    </div>
+    <div>
+      <h4>Email:</h4>
+      <p>{{ user.email }}</p>
+    </div>
+    <div>
+      <h4>Apikey:</h4>
+      <app-apikey [apikey]="user.apikey"></app-apikey>
+    </div>
+  </div>
+</div>

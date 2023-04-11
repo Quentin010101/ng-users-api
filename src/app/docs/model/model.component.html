@@ -1,0 +1,51 @@
+<h3>
+  <ng-content select="[title]"></ng-content>
+</h3>
+<p>
+  <ng-content select="[description]"></ng-content>
+</p>
+<code>
+  <ng-content select="[code]"></ng-content>
+</code>
+<div class="item">
+  <h4>
+    Headers
+  </h4>
+  <p>Response Headers:</p>
+  <ul>
+    <li>Content-Type: application/json</li>
+  </ul>
+</div>
+<div class="item">
+  <h4>
+    Parameters
+  </h4>
+  <div class="tab">
+    <div>
+      <h5>Name</h5>
+      <ng-content select="[tab-name]"></ng-content>
+    </div>
+    <div>
+      <h5>type</h5>
+      <ng-content select="[tab-type]"></ng-content>
+    </div>
+    <div>
+      <h5>Example</h5>
+      <ng-content select="[tab-example]"></ng-content>
+    </div>
+    <div>
+      <h5>Description</h5>
+      <ng-content select="[tab-description]"></ng-content>
+    </div>
+  </div>
+
+</div>
+<div class="item">
+  <h4>Example</h4>
+  <code>
+    <ng-content select="[code-example]"></ng-content>
+  </code>
+  <div class="pre">
+    <ng-content select="[example]"></ng-content>
+  </div>
+</div>

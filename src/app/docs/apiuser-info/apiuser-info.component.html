@@ -1,0 +1,19 @@
+<app-model>
+  <span title>Get User Information</span>
+  <span description>Use a User id to get full information about a User.</span>
+  <span code><strong>GET</strong> http://localhost:8080/api/user/{{ '{' }}id{{ '}' }}/information</span>
+  <span tab-name>id</span>
+  <span tab-type>number</span>
+  <span tab-example>5</span>
+  <span tab-description>The id of the user.</span>
+  <span code-example><strong>GET</strong> http://localhost:8080/api/user/1/information</span>
+  <pre example>
+    <span class="neutre">{{'{'}}</span>
+      <span class="neutre">id:</span> <span class="number">1</span>
+      <span class="neutre">name:</span> <span class="text">"quentin"</span>
+      <span class="neutre">surname:</span> <span class="text">"coz"</span>
+      <span class="neutre">email:</span> <span class="text">"quentin_c@hotmail.fr"</span>
+      <span class="neutre">date_of_birth:</span> <span class="number">12345656</span>
+    <span class="neutre">{{'}'}}</span>
+  </pre>
+</app-model>

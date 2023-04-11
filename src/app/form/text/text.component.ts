@@ -1,4 +1,4 @@
-import { Component, forwardRef } from '@angular/core';
+import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
@@ -14,6 +14,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
   ]
 })
 export class TextComponent implements ControlValueAccessor{
+
+  @Input() label: string = ''
+  @Input() id: string = ''
+
   value: string = ''
   isDisabled: boolean = false
   

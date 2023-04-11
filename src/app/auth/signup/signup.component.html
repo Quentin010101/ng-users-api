@@ -1,1 +1,30 @@
-<p>signup works!</p>
+<div class="back primary-1">
+  <a class=" flex align-center gap" routerLink="/home"><mat-back></mat-back><span>back</span></a>
+</div>
+
+<div class="form-container">
+  <form [formGroup]="signupForm">
+    <div>
+      <app-text formControlName="username" [label]="'Username'" [id]="'username'"></app-text>
+      <app-error [control]="signupForm.get('username')" fieldName="Username"></app-error>
+    </div>
+    <div>
+      <app-text formControlName="email" [label]="'Email'" [id]="'email'"></app-text>
+      <app-error [control]="signupForm.get('email')" fieldName="email"></app-error>
+    </div>
+    <div>
+      <app-password formControlName="password" [label]="'Password'" [id]="'password'"></app-password>
+      <app-error [control]="signupForm.get('password')" fieldName="password"></app-error>
+    </div>
+
+    <button class="button center" (click)="onSubmit()" [disabled]="!signupForm.valid">Sign</button>
+  </form>  
+  <div  class="errorMessage">
+    <small>
+    
+    </small>
+  </div>
+  <div>
+    <small>Already have an account? <a routerLink="/login" class="primary-1"> Log in here.</a></small>
+  </div>
+</div>

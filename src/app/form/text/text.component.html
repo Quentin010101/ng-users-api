@@ -1,2 +1,4 @@
-<label for="">Username</label>
-<input [disabled]="isDisabled" type="text" [value]="value" (input)="onInput($event)" (blur)="onTouched()">
+<div class="form-item"> 
+  <label for="{{ id }}">{{ label }}</label>
+  <input [disabled]="isDisabled" id="{{ id }}" type="text" [value]="value" (input)="onInput($event)" (blur)="onTouched()">
+</div>

@@ -7,7 +7,13 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
 import { DocsComponent } from './docs/docs.component';
-import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
+import { UserInfoComponent } from './dashboard/user-info/user-info.component';
+import { StatisticComponent } from './dashboard/statistic/statistic.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { BillingComponent } from './dashboard/billing/billing.component';
+import { APIUserInfoComponent } from './docs/apiuser-info/apiuser-info.component';
+import { APIUsersRandomComponent } from './docs/apiusers-random/apiusers-random.component';
+import { APIFindByNameComponent } from './docs/find-by-name/find-by-name.component';
 
 
 const routes: Routes = [
@@ -15,8 +21,24 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent },
-  { path: 'docs', component: DocsComponent},
-  { path: 'dashboard', loadChildren: ()=> import('./dashboard/dashboard-routing.module').then(m => m.DashboardRoutingModule), canActivate: [AuthGuard] },
+  { path: 'pricing', component: PricingComponent},
+  { path: 'docs', component: DocsComponent,
+  children: [
+    { path: '',redirectTo: 'user-info', pathMatch: 'full'},
+    { path: 'user-info', component: APIUserInfoComponent},
+    { path: 'users-random', component: APIUsersRandomComponent},
+    { path: 'findByName', component: APIFindByNameComponent},
+  ]
+},
+  { path: 'dashboard', component: DashboardComponent,
+      canActivate: [AuthGuard],
+      children: [
+        { path: '',redirectTo: 'info', pathMatch: 'full'},
+        { path: 'info', component: UserInfoComponent},
+        { path: 'statistic', component: StatisticComponent},
+        { path: 'billing', component: BillingComponent},
+      ]
+    },
   { path: '**', component: PageNotFoundComponent },
 ];
 

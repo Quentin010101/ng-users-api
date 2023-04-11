@@ -1,0 +1,28 @@
+<app-model>
+  <span title>Search Users by Name</span>
+  <span description>Get users informations using a name as query</span>
+  <span code><strong>GET</strong> http://localhost:8080/api/user/findByName</span>
+  <span tab-name>name</span>
+  <span tab-type>string</span>
+  <span tab-example>Tyler</span>
+  <span tab-description>The name of the users you're searching for</span>
+  <span code-example><strong>GET</strong> http://localhost:8080/api/user/findByName?name=Tyler</span>
+  <pre example>
+    <span class="neutre">[</span>
+      <span class="neutre">{{'{'}}</span>
+        <span class="neutre">id:</span> <span class="number">11</span>
+        <span class="neutre">name:</span> <span class="text">"Tyler"</span>
+        <span class="neutre">surname:</span> <span class="text">"Perry"</span>
+        <span class="neutre">email:</span> <span class="text">"tyler.perry45@example.com"</span>
+        <span class="neutre">date_of_birth:</span> <span class="number">15646</span>
+      <span class="neutre">{{'}'}}</span>
+      <span class="neutre">{{'{'}}</span>
+        <span class="neutre">id:</span> <span class="number">13</span>
+        <span class="neutre">name:</span> <span class="text">"Tyler"</span>
+        <span class="neutre">surname:</span> <span class="text">"Smith"</span>
+        <span class="neutre">email:</span> <span class="text">"Tyler.S@outlook.com"</span>
+        <span class="neutre">date_of_birth:</span> <span class="number">12378954</span>
+      <span class="neutre">{{'}'}}</span>
+    <span class="neutre">]</span>
+  </pre>
+</app-model>

@@ -1,1 +1,16 @@
-<p>docs works!</p>
+<app-template>
+  <h2>Documentation</h2>
+  <p>Here you have detailed documentation of all available API functions. </p>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a routerLinkActive="activeLink" routerLink="user-info">Get User Information</a></li>
+        <li><a routerLinkActive="activeLink" routerLink="users-random">Get Random Users Informations</a></li>
+        <li><a routerLinkActive="activeLink" routerLink="findByName">Search Users by Name</a></li>
+      </ul>
+    </nav>
+    <div class="router">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</app-template>

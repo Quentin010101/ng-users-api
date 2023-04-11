@@ -1,0 +1,35 @@
+<app-model>
+  <span title>Get Random Users Informations</span>
+  <span description>Get random users informations using the number query</span>
+  <span code><strong>GET</strong> http://localhost:8080/api/user/random</span>
+  <span tab-name>number</span>
+  <span tab-type>number</span>
+  <span tab-example>3</span>
+  <span tab-description>The number of users wanted.</span>
+  <span code-example><strong>GET</strong> http://localhost:8080/api/user/random?number=3</span>
+  <pre example>
+    <span class="neutre">[</span>
+      <span class="neutre">{{'{'}}</span>
+        <span class="neutre">id:</span> <span class="number">2</span>
+        <span class="neutre">name:</span> <span class="text">"Rachel"</span>
+        <span class="neutre">surname:</span> <span class="text">"Scott"</span>
+        <span class="neutre">email:</span> <span class="text">"rachel.scott73@example.com"</span>
+        <span class="neutre">date_of_birth:</span> <span class="number">14634</span>
+      <span class="neutre">{{'}'}}</span>
+      <span class="neutre">{{'{'}}</span>
+        <span class="neutre">id:</span> <span class="number">12</span>
+        <span class="neutre">name:</span> <span class="text">"Mia"</span>
+        <span class="neutre">surname:</span> <span class="text">"Rodriguez"</span>
+        <span class="neutre">email:</span> <span class="text">"mia.rodriguez27@example.com"</span>
+        <span class="neutre">date_of_birth:</span> <span class="number">4542452</span>
+      <span class="neutre">{{'}'}}</span>
+      <span class="neutre">{{'{'}}</span>
+        <span class="neutre">id:</span> <span class="number">10</span>
+        <span class="neutre">name:</span> <span class="text">"Samantha"</span>
+        <span class="neutre">surname:</span> <span class="text">"Lee"</span>
+        <span class="neutre">email:</span> <span class="text">"samantha.lee89@example.com"</span>
+        <span class="neutre">date_of_birth:</span> <span class="number">14564566</span>
+      <span class="neutre">{{'}'}}</span>
+    <span class="neutre">]</span>
+  </pre>
+</app-model>

@@ -1,7 +1,26 @@
-<p>login works!</p>
+<div class="back primary-1">
+  <a class=" flex align-center gap" routerLink="/home"><mat-back></mat-back><span>back</span></a>
+</div>
 
-<form [formGroup]="loginForm">
-  <app-text formControlName="username"></app-text>
-  <app-password formControlName="password"></app-password>
-  <button (click)="onSubmit()" [disabled]="!loginForm.valid">valider</button>
-</form>
+<div class="form-container">
+  <form [formGroup]="loginForm">
+    <h2 class="center">Log in</h2>
+    <div class="input-container">
+      <app-text formControlName="username" [label]="'Username'" [id]="'username'"></app-text>
+      <app-error [control]="loginForm.get('username')" fieldName="Username"></app-error>
+    </div>
+    <div class="input-container">
+      <app-password formControlName="password" [label]="'Password'" [id]="'password'"></app-password>
+      <app-error [control]="loginForm.get('password')" fieldName="Password"></app-error>
+    </div>
+    <button class="button center" (click)="onSubmit()" [disabled]="!loginForm.valid">Log in</button>
+  </form>
+  <div  class="errorMessage">
+    <small>
+      {{errorMessage}}
+    </small>
+  </div>
+  <div>
+    <small>Do not have an account yet? <a routerLink="/signup" class=" primary-1"> Sign up here.</a></small>
+  </div>
+</div>

@@ -1,3 +1,19 @@
-<p>dashboard works!</p>
-
-<router-outlet></router-outlet>
+<app-template>
+  <h2>API Console</h2>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a routerLinkActive="activeLink" routerLink="info">Profile</a></li>
+        <li><a routerLinkActive="activeLink" routerLink="statistic">Statistic</a></li>
+        <li><a routerLinkActive="activeLink" routerLink="billing">Billing</a></li>
+        <li><button class="disconect" (click)="logout()">
+          <mat-logout></mat-logout>
+          <span>Disconect</span> 
+        </button></li>
+      </ul>
+    </nav>
+    <div class="router">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</app-template>

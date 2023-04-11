@@ -1,1 +1,138 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+// color
+$primary-1: rgb(19, 84, 182);
+.primary-1{
+  color: $primary-1;
+  fill: $primary-1;
+}
+.bg-primary-1{
+  background-color: $primary-1;
+}
+
+$dark-1: black;
+$dark-2: rgb(30, 30, 30);
+$dark-3: rgb(60, 60, 60);
+$dark-4: rgb(90, 90, 90);
+
+body, button{
+  font-family: 'Poppins', sans-serif;
+}
+p{
+  color: $dark-3;
+}
+
+a{
+  text-decoration: none;
+  color: inherit
+}
+li{
+  list-style: none;
+}
+h2{
+  color: $dark-4;
+  margin-bottom: 1.5rem;
+  font-size: 2.2em;
+}
+
+// general
+.flex{
+  display: flex;
+}
+.justify-center{
+  justify-content: center;
+}
+.align-center{
+  align-items: center;
+}
+.gap{
+  gap: 0.5rem; 
+}
+.center{
+  margin-right: auto;
+  margin-left: auto;
+}
+.activeLink{
+  color: $primary-1;
+  background-color: rgb(241, 241, 241);
+  border-left: 2px $primary-1 solid;
+}
+
+
+
+// Formulaire
+.form-item{
+  display: flex;
+  flex-direction: column;
+}
+label{
+  color: $dark-2;
+  margin-bottom: 0.2rem;
+}
+input[type="text"], input[type="password"]{
+  padding: 0.4rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0rem;
+  outline: none;
+  border: 1px $dark-4 solid;
+}
+input[type="text"]:hover, input[type="password"]:hover{
+  border: 1px $dark-1 solid;
+}
+.button{
+  background-color: transparent;
+  outline: none;
+  border-radius: 0.25rem;
+  border: 1px solid $primary-1;
+  width: max-content;
+  padding: 0.6rem 1.2rem;
+  color: $primary-1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:disabled{
+    cursor:default;
+    color: $dark-4;
+    border: 1px solid $dark-4;
+
+  }
+
+  &:hover{
+    background-color: $primary-1;
+    color: white;
+  }
+}
+.button-header{
+  border-radius: 0.75rem;
+  border: 1px solid $primary-1;
+  padding: 0.25rem 0.55rem;
+  color: $primary-1; 
+  transition: opacity 0.3s ease-in;
+  &:hover{
+    opacity: 0.8;
+  }
+  &.full{
+    background-color: $primary-1;
+    color: white; 
+  }
+}
+
+// Other
+
+span{
+  &.neutre{
+    color: $dark-3;
+  }
+  &.number{
+    color: green;
+  }
+  &.text{
+    color: rgb(42, 56, 253);
+  }
+}

@@ -1,0 +1,14 @@
+<div class="bg-primary-1 card">
+  <ng-content select="[title]"></ng-content>
+  <hr>
+
+  <div class="flex justify-center align-center">
+    <ng-content select="[price]"></ng-content>/mo
+  </div>
+  <div>
+    <ng-content select="[description]"></ng-content>
+
+  </div>
+
+  <button>Subscribe</button>
+</div>

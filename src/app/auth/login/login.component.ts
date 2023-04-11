@@ -12,16 +12,16 @@ export class LoginComponent {
 
   loginForm: FormGroup = new FormGroup({})
   loginRequest: LoginRequest = new LoginRequest
+  errorMessage: string = ''
 
   constructor(private _authService: AuthService){}
 
   ngOnInit(){
     this.loginForm = new FormGroup({
       username: new FormControl(this.loginRequest.username, Validators.required),
-      password: new FormControl(this.loginRequest.username, [Validators.required, Validators.minLength(6)])
+      password: new FormControl(this.loginRequest.password, [Validators.required, Validators.minLength(6)])
     })
   }
-
 
   onSubmit(){
     this._authService.login(this.loginForm.value).subscribe({
@@ -29,7 +29,11 @@ export class LoginComponent {
         console.log(data)
         
       },
-      error: (error) => console.log(error)
+      error: (error) => {
+        this.errorMessage = "Wrong credentials."
+        this.loginForm.reset()
+        console.log(error)
+      }
     })
   }
 }

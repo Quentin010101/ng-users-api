@@ -1,0 +1,41 @@
+h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgb(50, 50, 50);
+  fill: rgb(50, 50, 50);
+  margin-bottom: 1rem;
+
+  span{
+    font-size: 1.4rem;
+  }
+}
+
+
+.block{
+  margin: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  p{
+    color: white;
+  }
+
+  app-card{
+    color: white !important;
+
+    h4{
+      font-size: 1.5em;
+    }
+    h5{
+      font-size: 2em;
+    }
+  }
+
+  &>div{
+    margin: 1.2rem 0;
+
+
+  }
+}

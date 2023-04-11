@@ -15,6 +15,23 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DocsComponent } from './docs/docs.component';
 import { UserInfoComponent } from './dashboard/user-info/user-info.component';
 import { StatisticComponent } from './dashboard/statistic/statistic.component';
+import { TemplateComponent } from './global/template/template.component';
+import { HeaderComponent } from './global/header/header.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { ErrorComponent } from './form/error/error.component';
+import { BackComponent } from './global/icon/back/back.component';
+import { BillingComponent } from './dashboard/billing/billing.component';
+import { LogoutComponent } from './global/icon/logout/logout.component';
+import { UserComponent } from './global/icon/user/user.component';
+import { StatComponent } from './global/icon/stat/stat.component';
+import { MoneyComponent } from './global/icon/money/money.component';
+import { ApikeyComponent } from './dashboard/user-info/apikey/apikey.component';
+import { CardComponent } from './dashboard/billing/card/card.component';
+import { APIUsersRandomComponent } from './docs/apiusers-random/apiusers-random.component';
+import { APIUserInfoComponent } from './docs/apiuser-info/apiuser-info.component';
+import { ModelComponent } from './docs/model/model.component';
+import { APIFindByNameComponent } from './docs/find-by-name/find-by-name.component';
+import { ChartComponent } from './dashboard/statistic/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +46,23 @@ import { StatisticComponent } from './dashboard/statistic/statistic.component';
     DocsComponent,
     UserInfoComponent,
     StatisticComponent,
+    TemplateComponent,
+    HeaderComponent,
+    PricingComponent,
+    ErrorComponent,
+    BackComponent,
+    BillingComponent,
+    LogoutComponent,
+    UserComponent,
+    StatComponent,
+    MoneyComponent,
+    ApikeyComponent,
+    CardComponent,
+    APIUsersRandomComponent,
+    APIUserInfoComponent,
+    ModelComponent,
+    APIFindByNameComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,

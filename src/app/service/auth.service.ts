@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { UserService } from './user.service';
 import { LoginRequest } from '../model/LoginRequest';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Router } from '@angular/router';
+import { SignupRequest } from '../model/SignupRequest';
+import { HttpResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +31,16 @@ export class AuthService {
     )
   }
 
+  signup(signupRequest: SignupRequest): Observable<HttpResponse<any>>{
+    return this._userService.signup(signupRequest).pipe(
+      tap((response: any) => {
+        this.router.navigate(['login'])
+      })
+    )
+  }
+
   logout(){
     localStorage.removeItem('accessToken')
+    this._isLoggedIn$.next(false)
   }
 }
