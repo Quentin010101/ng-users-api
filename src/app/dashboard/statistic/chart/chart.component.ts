@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { Req } from 'src/app/model/Request';
 Chart.register(...registerables);
 
 @Component({
@@ -7,30 +8,45 @@ Chart.register(...registerables);
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
-export class ChartComponent {
-  @Input() requests!: Request[]
+export class ChartComponent implements OnChanges {
+  @Input() requests!: Req[]
 
-  ngOnInit(){
-    let ctx = document.getElementById('myChart') as HTMLCanvasElement;
+  ctx : HTMLCanvasElement
 
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
+  ngOnChanges(changes: SimpleChanges){
+    if(this.requests) {
+
+      let requestDay: Req[] = this.requests.filter((objet) => {
+        const dateObjet = new Date(objet.date);
+        const dateAujourdhui = new Date();
+        return dateObjet.getDate() === dateAujourdhui.getDate()
+      })
+      this.ctx = document.getElementById('myChart') as HTMLCanvasElement
+      
+      new Chart(this.ctx, {
+        type: 'bar',
+        data: {
+          labels: [new Date().toDateString()],
+          datasets: [{
+            label: 'Number of requests',
+            data: [requestDay.length],
+            borderWidth: 1,
+            backgroundColor: '#1354b6',
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100
+            }
           }
         }
-      }
-    });
+      });
+    }
+  }
+  ngOnInit(){
+
   }
 
 }

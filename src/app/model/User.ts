@@ -3,5 +3,5 @@ export class User{
   username!: string
   email!: string
   apikey!: string
-  requets!: Request[]
+  requests!: Request[]
 }
